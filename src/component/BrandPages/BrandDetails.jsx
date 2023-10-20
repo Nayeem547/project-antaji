@@ -4,23 +4,23 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 
 const BrandDetails = () => {
-  const [card, setCard] = useState({});
+//   const [cart, setCart] = useState({});
 
-  const { id } = useParams();
-  console.log(id);
+//    const { _id } = useParams();
+//    console.log(_id);
 
-  const carded = useLoaderData();
-  console.log(carded);
+  const cartes = useLoaderData();
+    // console.log(cartes);
 
-  useEffect(() => {
-    const findCard = carded?.find((card) => card.id == id);
-    setCard(findCard);
-  }, [id, carded]);
+//   useEffect(() => {
+//     const findCard = cartes?.find((cart) => cart._id ==  _id);
+//     setCart(findCard);
+//   }, [_id, cartes]);
 
   return (
     <div>
       <div className="flex   justify-center">
-        <BrandPages card={card}></BrandPages>
+        <BrandPages cart={cartes}></BrandPages>
       </div>
 
      

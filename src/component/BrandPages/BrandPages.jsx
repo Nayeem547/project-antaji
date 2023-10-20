@@ -5,10 +5,10 @@ import Slider from 'react-slick';
 import CardData from '../CardData/CardData';
 
 // import CardData from '../CardData/CardData';
-const BrandPages = ({card}) => {
+const BrandPages = ({cart}) => {
     
     
-    const {banner_image_one, name, banner_image_two, banner_image_three} = card || {}
+    const {names, image, Brand, brand_image,  Price, banner_image_three, banner_image_one,  banner_image_two,  description}= cart || {}
     const settings = {
         dots: true,
 infinite: true,
@@ -18,6 +18,9 @@ slidesToScroll: 1,
 autoplay: true,
 autoplaySpeed: 3000,
     };
+
+    console.log(banner_image_three);
+
 return (
      <div>
 <div className="banner-slider w-[270px] md:w-[700px] lg:w-[1400px]  justify-center items-center text-center mx-auto ">

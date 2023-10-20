@@ -1,5 +1,6 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLoaderData, useParams } from  'react-router-dom';
+import CardBox from './CardBox';
 
 
 const CardData = ({}) => {
@@ -9,24 +10,24 @@ const CardData = ({}) => {
     console.log(cartes)
 
 
-//     const [cart, setCart] = useState({});
+    const [cart, setCart] = useState({});
 
-//   const { _id } = useParams();
-//   console.log(_id);
+  const { _id } = useParams();
+  console.log(_id);
 
   
 
-//   useEffect(() => {
-//     const findCart = cartes?.find((cart) => cart._id == _id);
-//     setCart(findCart);
-//   }, [_id, cartes]);
+  useEffect(() => {
+    const findCart = cartes?.find((cart) => cart._id == _id);
+    setCart(findCart);
+  }, [_id, cartes]);
 
     
     return (
         <div>
             <h1>Card item : </h1>
             {
-                cartes.map((cart) => <div key={cart._id} > <h2>{cart.names}</h2> </div> )
+                cartes.map((cart) => <CardBox key={cart._id} cart={cart} ></CardBox> )
             }
         </div>
     );
